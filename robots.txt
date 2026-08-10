@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snool.com.br/sitemap.xml

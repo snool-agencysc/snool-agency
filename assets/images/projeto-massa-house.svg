@@ -1,0 +1,20 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Mockup conceitual — Massa House</title>
+  <rect width="640" height="480" fill="#161210"/>
+  <rect x="0" y="0" width="640" height="90" fill="#1f1a16"/>
+  <text x="40" y="55" font-family="'Georgia', serif" font-size="26" fill="#f4ead9" letter-spacing="1">Massa House</text>
+  <circle cx="560" cy="45" r="20" fill="none" stroke="#e8a13c" stroke-width="1.4"/>
+  <path d="M550 45 a10 10 0 1 0 20 0" fill="none" stroke="#e8a13c" stroke-width="1.4"/>
+  <g fill="#e8a13c" opacity="0.9">
+    <circle cx="120" cy="200" r="70"/>
+  </g>
+  <circle cx="120" cy="200" r="70" fill="#241d17" stroke="#e8a13c" stroke-width="1"/>
+  <circle cx="100" cy="185" r="6" fill="#c23b2b"/>
+  <circle cx="140" cy="190" r="6" fill="#c23b2b"/>
+  <circle cx="115" cy="220" r="6" fill="#c23b2b"/>
+  <circle cx="145" cy="220" r="6" fill="#c23b2b"/>
+  <text x="230" y="180" font-family="Arial, sans-serif" font-size="14" fill="#c9beae">Cardápio &amp; Pedidos</text>
+  <text x="230" y="205" font-family="Arial, sans-serif" font-size="12" fill="#8a8078">Pizzas artesanais no forno a lenha</text>
+  <rect x="230" y="230" width="200" height="34" rx="17" fill="#c23b2b"/>
+  <text x="330" y="252" font-family="Arial, sans-serif" font-size="12" fill="#f4ead9" text-anchor="middle" font-weight="700">PEDIR PELO WHATSAPP</text>
+</svg>

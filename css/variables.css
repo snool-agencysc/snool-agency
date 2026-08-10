@@ -1,0 +1,82 @@
+:root {
+  /* Brand colors */
+  --color-bg: #111111;
+  --color-bg-secondary: #161616;
+  --color-bg-elevated: #1b1b1b;
+  --color-text: #f7f7f5;
+  --color-text-muted: rgba(247, 247, 245, 0.72);
+  --color-text-faint: rgba(247, 247, 245, 0.46);
+  --color-accent: #bfe3ff;
+  --color-accent-dim: rgba(191, 227, 255, 0.14);
+  --color-border: rgba(247, 247, 245, 0.16);
+  --color-border-strong: rgba(247, 247, 245, 0.3);
+  --color-surface-translucent: rgba(17, 17, 17, 0.82);
+  --color-surface-translucent-strong: rgba(17, 17, 17, 0.75);
+
+  /* Typography */
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --fs-h1: clamp(2.6rem, 5.4vw, 5.6rem);
+  --fs-h2: clamp(2rem, 3.4vw, 3.4rem);
+  --fs-h3: clamp(1.25rem, 1.8vw, 1.6rem);
+  --fs-lead: clamp(1.05rem, 1.3vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.8rem;
+
+  /* Spacing scale (base 8) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+  --space-7: 6rem;
+  --space-8: 9rem;
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-mid: 0.5s;
+  --dur-slow: 0.9s;
+
+  /* Shadow */
+  --shadow-soft: 0 20px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+/* Tema claro — branco + o mesmo azul clarinho (accent) do tema escuro */
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f4f9ff;
+  --color-bg-elevated: #eaf4ff;
+  --color-text: #10151a;
+  --color-text-muted: rgba(16, 21, 26, 0.68);
+  --color-text-faint: rgba(16, 21, 26, 0.46);
+  --color-accent: #4fa9e8;
+  --color-accent-dim: rgba(79, 169, 232, 0.14);
+  --color-border: rgba(16, 21, 26, 0.12);
+  --color-border-strong: rgba(16, 21, 26, 0.22);
+  --color-surface-translucent: rgba(255, 255, 255, 0.82);
+  --color-surface-translucent-strong: rgba(255, 255, 255, 0.75);
+
+  --shadow-soft: 0 20px 60px -30px rgba(16, 21, 26, 0.25);
+}
+
+/* Transicao suave ao alternar de tema */
+body,
+.site-header,
+.card,
+.btn,
+.portfolio-tag {
+  transition: background-color var(--dur-mid) var(--ease-out),
+    color var(--dur-mid) var(--ease-out),
+    border-color var(--dur-mid) var(--ease-out);
+}

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNOOL — Soluções Digitais para Pequenos Negócios</title>
+  <meta name="description" content="A SNOOL cria landing pages, sites e soluções digitais para pequenos negócios. Dê o próximo passo digital para sua empresa." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://snool.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SNOOL — Soluções Digitais para Pequenos Negócios" />
+  <meta property="og:description" content="Landing pages, sites e presença digital para MEIs e pequenos negócios em Joinville e região." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://snool.com.br/" />
+  <meta property="og:image" content="assets/images/og-snool.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SNOOL — Soluções Digitais para Pequenos Negócios" />
+  <meta name="twitter:description" content="Landing pages, sites e presença digital para MEIs e pequenos negócios em Joinville e região." />
+
+  <link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml" />
+
+  <!-- Evita flash do tema errado antes do CSS/JS carregarem -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem("snool-theme");
+      document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Google Analytics: inserir gtag.js aqui quando o ID estiver definido -->
+  <!-- Google Tag Manager: inserir snippet no <head> aqui -->
+  <!-- Meta Pixel: inserir script aqui -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SNOOL",
+    "description": "Soluções digitais para pequenos negócios: landing pages, sites institucionais e presença digital.",
+    "areaServed": "Joinville, SC",
+    "slogan": "Seu próximo passo digital."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="SNOOL — página inicial">
+        <svg class="logo-mark" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="14" cy="14" r="10" stroke="var(--color-text)" stroke-width="3.2"/>
+          <circle cx="26" cy="14" r="10" stroke="var(--color-accent)" stroke-width="3.2"/>
+        </svg>
+        SNOOL
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#top">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#" data-whatsapp>Fale conosco</a>
+
+      <button class="theme-toggle" data-theme-toggle aria-label="Alternar para tema claro" aria-pressed="false">
+        <svg class="theme-toggle-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/>
+        </svg>
+        <svg class="theme-toggle-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Navegação mobile">
+      <ul>
+        <li><a href="#top">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#" data-whatsapp>Fale conosco</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div data-reveal>
+          <span class="hero-badge"><span class="dot"></span>Soluções digitais para pequenos negócios</span>
+          <h1>Seu negócio merece ser visto.</h1>
+          <p class="lead">Criamos soluções digitais profissionais para pequenos negócios que querem crescer, conquistar clientes e dar o próximo passo.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#" data-whatsapp>
+              Quero dar o próximo passo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#projetos">Ver nossos projetos</a>
+          </div>
+          <p class="hero-trust">Atendemos negócios em Joinville e região.</p>
+        </div>
+
+        <div class="hero-visual" data-reveal data-reveal-delay="150" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="orbit-o">
+              <circle cx="150" cy="200" r="90" stroke="var(--color-text)" stroke-opacity="0.5" stroke-width="1.4"/>
+            </g>
+            <g class="orbit-o reverse">
+              <circle cx="250" cy="200" r="90" stroke="var(--color-accent)" stroke-width="1.6"/>
+            </g>
+            <circle cx="150" cy="200" r="3" fill="var(--color-text)"/>
+            <circle cx="250" cy="200" r="3" fill="var(--color-accent)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="problem section">
+      <div class="container problem-grid">
+        <div data-reveal>
+          <span class="eyebrow">O ponto de partida</span>
+          <h2>Seu negócio já existe.<br />O digital precisa acompanhar.</h2>
+        </div>
+        <div data-reveal data-reveal-delay="120">
+          <ul class="problem-list">
+            <li>Seu negócio depende apenas do Instagram.</li>
+            <li>Seu cliente não encontra informações facilmente.</li>
+            <li>Você não possui uma página profissional.</li>
+            <li>Seu concorrente parece mais profissional online.</li>
+            <li>Você perde oportunidades porque o cliente não sabe como entrar em contato.</li>
+          </ul>
+          <p class="problem-resolve">A SNOOL resolve isso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Serviços</span>
+          <h2>O que fazemos</h2>
+        </div>
+
+        <div class="grid services-grid">
+          <article class="card service-card" data-reveal>
+            <span class="service-number">01</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M7 14h4"/></svg>
+            <h3>Landing Pages</h3>
+            <p>Páginas estratégicas focadas em apresentar seu negócio e gerar contatos.</p>
+            <a class="service-link" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Quero saber mais sobre Landing Pages.">
+              Solicitar orçamento
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="card service-card" data-reveal data-reveal-delay="80">
+            <span class="service-number">02</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+            <h3>Sites</h3>
+            <p>Sites profissionais para empresas que precisam de uma presença digital completa.</p>
+            <a class="service-link" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Quero saber mais sobre Sites institucionais.">
+              Solicitar orçamento
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="card service-card" data-reveal data-reveal-delay="160">
+            <span class="service-number">03</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg>
+            <h3>Identidade Digital</h3>
+            <p>Estrutura visual e presença online para fortalecer a marca.</p>
+            <a class="service-link" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Quero saber mais sobre Identidade Digital.">
+              Solicitar orçamento
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="card service-card" data-reveal data-reveal-delay="240">
+            <span class="service-number">04</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            <h3>Automações</h3>
+            <p>Soluções para reduzir tarefas manuais e melhorar processos.</p>
+            <a class="service-link" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Quero saber mais sobre Automações.">
+              Solicitar orçamento
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUE SNOOL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Por que SNOOL?</span>
+          <h2>Não fazemos apenas páginas bonitas.</h2>
+          <p class="lead">Criamos experiências digitais pensadas para funcionar.</p>
+        </div>
+
+        <div class="grid pillars-grid">
+          <div class="pillar" data-reveal>
+            <span class="pillar-number">01</span>
+            <h3>Estratégia</h3>
+            <p>Cada projeto começa entendendo o negócio.</p>
+          </div>
+          <div class="pillar" data-reveal data-reveal-delay="80">
+            <span class="pillar-number">02</span>
+            <h3>Design</h3>
+            <p>Visual profissional que transmite confiança.</p>
+          </div>
+          <div class="pillar" data-reveal data-reveal-delay="160">
+            <span class="pillar-number">03</span>
+            <h3>Performance</h3>
+            <p>Sites rápidos, responsivos e otimizados.</p>
+          </div>
+          <div class="pillar" data-reveal data-reveal-delay="240">
+            <span class="pillar-number">04</span>
+            <h3>Conversão</h3>
+            <p>Tudo pensado para facilitar o próximo passo do cliente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Projetos</span>
+          <h2>Projetos que dão vida às ideias.</h2>
+          <p class="lead">Estamos começando — os projetos abaixo são conceituais e mostram como adaptamos o design a diferentes negócios.</p>
+        </div>
+
+        <div class="grid portfolio-grid" data-portfolio-grid></div>
+
+        <div class="section-foot">
+          <a class="btn btn-secondary" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Quero ver mais projetos e saber como funciona.">Falar sobre o meu projeto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Processo</span>
+          <h2>Do primeiro contato ao lançamento.</h2>
+        </div>
+
+        <div class="process-list">
+          <div class="process-step" data-reveal>
+            <span class="process-index">01</span>
+            <div>
+              <h3>Conversa</h3>
+              <p>Entendemos seu negócio, público e objetivo.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="80">
+            <span class="process-index">02</span>
+            <div>
+              <h3>Estratégia</h3>
+              <p>Definimos estrutura, conteúdo e direção visual.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="160">
+            <span class="process-index">03</span>
+            <div>
+              <h3>Desenvolvimento</h3>
+              <p>Construímos e refinamos a solução.</p>
+            </div>
+          </div>
+          <div class="process-step" data-reveal data-reveal-delay="240">
+            <span class="process-index">04</span>
+            <div>
+              <h3>Lançamento</h3>
+              <p>Publicamos e entregamos tudo funcionando.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEI -->
+    <section class="mei section">
+      <div class="container mei-grid">
+        <div data-reveal>
+          <span class="eyebrow">Para MEIs</span>
+          <h2>Seu negócio pode parecer grande sem ser complicado.</h2>
+          <p class="lead">Você não precisa entender de tecnologia para ter uma presença digital profissional.</p>
+          <a class="btn btn-primary mt-4" href="#" data-whatsapp data-whatsapp-message="Olá, SNOOL! Sou MEI e quero minha página.">Quero minha página</a>
+        </div>
+
+        <ul class="benefit-list" data-reveal data-reveal-delay="100">
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Página profissional
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Link personalizado
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Botão de WhatsApp
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Informações organizadas
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Responsividade
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Otimização
+          </li>
+          <li class="benefit-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Estrutura pensada para conversão
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">O que dizem sobre nós</span>
+          <h2>Prova social</h2>
+        </div>
+
+        <div class="grid testimonials-grid">
+          <div class="testimonial-placeholder" data-reveal>
+            Em breve, depoimentos reais de clientes SNOOL aparecerão aqui.
+          </div>
+          <div class="testimonial-placeholder" data-reveal data-reveal-delay="100">
+            Está entre os primeiros clientes da SNOOL? Seu depoimento pode aparecer aqui.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2>FAQ</h2>
+        </div>
+
+        <div class="faq-wrap" data-reveal>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Quanto custa uma landing page?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>O valor depende da estrutura, conteúdo e necessidades do projeto. Entre em contato para receber uma proposta personalizada.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Quanto tempo demora?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>O prazo varia conforme a complexidade do projeto. Definimos um cronograma claro logo na etapa de estratégia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Eu preciso ter domínio?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Não é obrigatório. Podemos te orientar sobre como registrar um domínio, ou ajudar você a fazer isso.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Eu preciso ter hospedagem?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Também não é obrigatório. A SNOOL pode indicar e configurar uma hospedagem adequada ao seu projeto.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Vocês fazem manutenção?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, oferecemos suporte e manutenção após o lançamento. Conversamos sobre isso durante o orçamento.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              A página funciona no celular?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Todos os projetos são desenvolvidos mobile-first, priorizando a experiência no celular.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Posso colocar botão de WhatsApp?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, é inclusive uma das principais formas de conversão que recomendamos para pequenos negócios.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Vocês atendem empresas de outras cidades?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nosso foco inicial é Joinville e região, mas atendemos negócios de outras cidades sob consulta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-final" data-reveal>
+          <div class="cta-glow" aria-hidden="true"></div>
+          <h2>Seu próximo passo começa agora.</h2>
+          <p class="lead">Vamos transformar sua presença digital em uma ferramenta para o seu negócio crescer.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#" data-whatsapp>
+              Falar com a SNOOL
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact-section" id="contato">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Contato</span>
+          <h2>Vamos conversar sobre o seu negócio.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form" data-contact-form data-reveal novalidate>
+            <div class="form-row">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization" />
+            </div>
+            <div class="form-row">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" />
+            </div>
+            <div class="form-row">
+              <label for="servico">Serviço desejado</label>
+              <select id="servico" name="servico">
+                <option value="">Selecione uma opção</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="Site institucional">Site institucional</option>
+                <option value="Identidade Digital">Identidade Digital</option>
+                <option value="Automações">Automações</option>
+                <option value="Ainda não sei">Ainda não sei</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar para o WhatsApp</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div data-reveal data-reveal-delay="100">
+            <p class="lead">Prefere falar direto? Chame a gente no WhatsApp — é o canal mais rápido para receber sua proposta.</p>
+            <a class="btn btn-secondary mt-4" href="#" data-whatsapp>Abrir WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="logo" aria-label="SNOOL — página inicial">
+            <svg class="logo-mark" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="14" cy="14" r="10" stroke="var(--color-text)" stroke-width="3.2"/>
+              <circle cx="26" cy="14" r="10" stroke="var(--color-accent)" stroke-width="3.2"/>
+            </svg>
+            SNOOL
+          </a>
+          <p class="mt-3 max-32ch">Soluções digitais para pequenos negócios.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Links do rodapé">
+          <a href="#top">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#processo">Processo</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="footer-links">
+          <a href="#" data-whatsapp>WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Joinville — SC</span>
+        <span>© <span data-year>2026</span> SNOOL. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

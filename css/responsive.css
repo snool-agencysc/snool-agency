@@ -1,0 +1,32 @@
+@media (max-width: 400px) {
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cta-final {
+    margin-inline: var(--space-2);
+    padding: var(--space-6) var(--space-3);
+  }
+}
+
+@media (max-width: 639px) {
+  .service-card,
+  .card {
+    padding: var(--space-3);
+  }
+  .section {
+    padding-block: var(--space-6);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+}
