@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Barbearia Noir — Protótipo conceitual · SNOOL</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0c0b;
+    --bg-elevated:#17140f;
+    --bg-card:#1c1812;
+    --ink:#f3ece0;
+    --ink-muted:rgba(243,236,224,0.64);
+    --ink-faint:rgba(243,236,224,0.4);
+    --gold:#b8894a;
+    --gold-soft:rgba(184,137,74,0.16);
+    --burgundy:#7a2e2e;
+    --line:rgba(243,236,224,0.12);
+    --font-display:"Bodoni Moda", "Times New Roman", serif;
+    --font-body:"Manrope", sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 1.5rem;}
+
+  /* Ribbon */
+  .concept-ribbon{
+    background:var(--gold);
+    color:#1c1408;
+    font-size:0.8rem;
+    font-weight:700;
+    text-align:center;
+    padding:0.6rem 1rem;
+    letter-spacing:0.02em;
+  }
+  .concept-ribbon a{
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
+  /* Barber pole stripe divider */
+  .stripe-divider{
+    height:10px;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--gold) 0 14px,
+      var(--burgundy) 14px 28px,
+      var(--ink) 28px 42px
+    );
+    opacity:0.9;
+  }
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(14,12,11,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.1rem 0;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.3rem;
+    letter-spacing:0.03em;
+  }
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex; gap:2rem; font-size:0.92rem;}
+  nav.main-nav a{opacity:0.82; transition:opacity 0.2s;}
+  nav.main-nav a:hover{opacity:1; color:var(--gold);}
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    background:var(--gold); color:#1c1408;
+    padding:0.6rem 1.2rem; border-radius:999px;
+    font-weight:700; font-size:0.88rem;
+    text-decoration:none;
+  }
+  @media (max-width:760px){ nav.main-nav{display:none;} }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    padding:5rem 0 4.5rem;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(184,137,74,0.16), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(122,46,46,0.18), transparent 40%);
+  }
+  .hero-inner{display:grid; grid-template-columns:1.2fr 0.8fr; gap:3rem; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    color:var(--gold); font-size:0.82rem; font-weight:700;
+    letter-spacing:0.14em; text-transform:uppercase;
+    margin-bottom:1.2rem;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold);}
+  h1{
+    font-family:var(--font-display);
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.08;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  h1 em{color:var(--gold); font-style:italic;}
+  .hero p.lead{
+    margin-top:1.4rem; max-width:34ch;
+    color:var(--ink-muted); font-size:1.05rem;
+  }
+  .hero-ctas{display:flex; gap:1rem; margin-top:2.2rem; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:0.6rem;
+    padding:0.85rem 1.6rem; border-radius:4px;
+    font-weight:700; font-size:0.92rem; text-decoration:none;
+    border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--gold); color:#1c1408;}
+  .btn-ghost{border-color:var(--line); color:var(--ink);}
+  .hero-visual{
+    aspect-ratio:3/4; border-radius:6px; position:relative; overflow:hidden;
+    background:
+      linear-gradient(160deg, #241d14 0%, #14100c 70%);
+    border:1px solid var(--line);
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(-45deg, rgba(184,137,74,0.08) 0 2px, transparent 2px 26px);
+  }
+  .hero-visual .pole{
+    position:absolute; right:14%; top:8%; bottom:8%; width:22px;
+    border-radius:999px; overflow:hidden;
+    box-shadow:0 0 0 1px var(--line);
+    background:repeating-linear-gradient(-45deg, var(--gold) 0 10px, var(--burgundy) 10px 20px, var(--ink) 20px 30px);
+  }
+  .hero-visual .scissor-tag{
+    position:absolute; left:10%; bottom:10%;
+    font-family:var(--font-display); font-style:italic;
+    font-size:0.95rem; color:var(--ink-faint);
+  }
+
+  /* Section shell */
+  section{padding:4.5rem 0;}
+  .section-head{margin-bottom:2.4rem; max-width:46ch;}
+  .section-head .eyebrow{margin-bottom:0.8rem;}
+  .section-head h2{font-family:var(--font-display); font-size:clamp(1.7rem,3vw,2.3rem); font-weight:700;}
+  .section-head p{color:var(--ink-muted); margin-top:0.8rem;}
+
+  /* Menu / services as a ticket */
+  .menu-ticket{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:8px;
+    padding:2.4rem 2rem;
+  }
+  .menu-group + .menu-group{margin-top:1.8rem; padding-top:1.8rem; border-top:1px dashed var(--line);}
+  .menu-group-title{
+    font-family:var(--font-display); font-style:italic; color:var(--gold);
+    font-size:1.05rem; margin-bottom:1rem;
+  }
+  .menu-item{
+    display:flex; align-items:baseline; gap:0.6rem;
+    padding:0.55rem 0;
+  }
+  .menu-item .name{font-weight:600;}
+  .menu-item .leader{flex:1; border-bottom:1px dotted var(--ink-faint); transform:translateY(-4px);}
+  .menu-item .price{font-family:var(--font-display); color:var(--gold); font-weight:700;}
+  .menu-item .sub{display:block; font-size:0.8rem; color:var(--ink-faint); font-weight:400; margin-top:0.15rem;}
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem;
+  }
+  .gallery-item{
+    aspect-ratio:1; border-radius:6px; border:1px solid var(--line);
+    position:relative; overflow:hidden;
+    display:flex; align-items:flex-end; padding:0.9rem;
+  }
+  .gallery-item span{
+    position:relative; font-size:0.78rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--ink);
+  }
+  .gallery-item:nth-child(1){background:linear-gradient(150deg,#2a2015,#14110c);}
+  .gallery-item:nth-child(2){background:linear-gradient(150deg,#301c1c,#14110c);}
+  .gallery-item:nth-child(3){background:linear-gradient(150deg,#241f18,#14110c);}
+  .gallery-item:nth-child(4){background:linear-gradient(150deg,#231a14,#14110c);}
+  .gallery-item:nth-child(5){background:linear-gradient(150deg,#2c2118,#14110c);}
+  .gallery-item:nth-child(6){background:linear-gradient(150deg,#281c1a,#14110c);}
+  @media (max-width:700px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+
+  /* Info / location */
+  .info-grid{display:grid; grid-template-columns:1fr 1fr; gap:2rem;}
+  .info-card{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:8px; padding:1.8rem;
+  }
+  .info-card h3{font-family:var(--font-display); margin-bottom:0.9rem; color:var(--gold); font-size:1.1rem;}
+  .info-card dl{display:grid; grid-template-columns:auto 1fr; gap:0.4rem 1rem; font-size:0.92rem;}
+  .info-card dt{color:var(--ink-faint);}
+  @media (max-width:700px){ .info-grid{grid-template-columns:1fr;} .hero-inner{grid-template-columns:1fr;} .hero-visual{display:none;} }
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line); padding:2.6rem 0; margin-top:2rem;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+    color:var(--ink-faint); font-size:0.85rem;
+  }
+  footer a{color:var(--gold); text-decoration:none; font-weight:600;}
+</style>
+</head>
+<body>
+
+  <div class="concept-ribbon">
+    ✂ Este é um protótipo conceitual criado pela SNOOL para demonstrar como ficaria o site da Barbearia Noir — não é um cliente real ainda.
+    <a href="../../index.html">Ver o site da SNOOL →</a>
+  </div>
+  <div class="stripe-divider" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap header-inner">
+      <div class="logo">BARBEARIA <span>NOIR</span></div>
+      <nav class="main-nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#local">Localização</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Noir." target="_blank" rel="noopener">Agendar horário</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <span class="eyebrow">Barbearia · Joinville, SC</span>
+          <h1>Estilo tem <em>hora marcada.</em></h1>
+          <p class="lead">Corte clássico, barba desenhada e atendimento sem pressa. Ambiente pensado para quem trata o cuidado pessoal como ritual, não como tarefa.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Noir." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços e preços</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="pole" aria-hidden="true"></div>
+          <span class="scissor-tag">— desde a primeira tesourada —</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">O cardápio da casa</span>
+          <h2>Serviços &amp; valores</h2>
+          <p>Preços de referência para este protótipo — cada barbearia ajusta a sua própria tabela.</p>
+        </div>
+        <div class="menu-ticket">
+          <div class="menu-group">
+            <div class="menu-group-title">Cabelo</div>
+            <div class="menu-item"><span class="name">Corte clássico</span><span class="leader"></span><span class="price">R$ 45</span></div>
+            <div class="menu-item"><span class="name">Corte + acabamento navalha</span><span class="leader"></span><span class="price">R$ 55</span></div>
+            <div class="menu-item"><span class="name">Corte infantil<span class="sub">até 12 anos</span></span><span class="leader"></span><span class="price">R$ 35</span></div>
+          </div>
+          <div class="menu-group">
+            <div class="menu-group-title">Barba</div>
+            <div class="menu-item"><span class="name">Barba desenhada</span><span class="leader"></span><span class="price">R$ 35</span></div>
+            <div class="menu-item"><span class="name">Barboterapia<span class="sub">toalha quente + óleos</span></span><span class="leader"></span><span class="price">R$ 50</span></div>
+          </div>
+          <div class="menu-group">
+            <div class="menu-group-title">Combos</div>
+            <div class="menu-item"><span class="name">Corte + barba</span><span class="leader"></span><span class="price">R$ 70</span></div>
+            <div class="menu-item"><span class="name">Corte + barba + sobrancelha</span><span class="leader"></span><span class="price">R$ 85</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Trabalhos recentes</span>
+          <h2>Galeria</h2>
+          <p>Em um site real, aqui entram fotos reais dos cortes e do ambiente da barbearia.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><span>Corte clássico</span></div>
+          <div class="gallery-item"><span>Barba desenhada</span></div>
+          <div class="gallery-item"><span>Ambiente</span></div>
+          <div class="gallery-item"><span>Navalha</span></div>
+          <div class="gallery-item"><span>Combo completo</span></div>
+          <div class="gallery-item"><span>Finalização</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="local">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Venha nos conhecer</span>
+          <h2>Localização &amp; horário</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Endereço</h3>
+            <dl>
+              <dt>Rua</dt><dd>Exemplo, 000 — Centro</dd>
+              <dt>Cidade</dt><dd>Joinville — SC</dd>
+              <dt>Referência</dt><dd>Próximo à praça central (fictício)</dd>
+            </dl>
+          </div>
+          <div class="info-card">
+            <h3>Horário de atendimento</h3>
+            <dl>
+              <dt>Ter—Sex</dt><dd>09h às 19h</dd>
+              <dt>Sábado</dt><dd>08h às 16h</dd>
+              <dt>Dom/Seg</dt><dd>Fechado</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:1rem;">
+      <span>Protótipo conceitual — Barbearia Noir não é uma cliente real da SNOOL (ainda).</span>
+      <a href="../../index.html">Feito pela SNOOL →</a>
+    </div>
+  </footer>
+
+</body>
+</html>

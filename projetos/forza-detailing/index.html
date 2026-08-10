@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Forza Detailing — Protótipo conceitual · SNOOL</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0b0d;
+    --bg-elevated:#131519;
+    --bg-card:#16181d;
+    --ink:#f2f3f5;
+    --ink-muted:rgba(242,243,245,0.62);
+    --ink-faint:rgba(242,243,245,0.4);
+    --red:#e63946;
+    --red-soft:rgba(230,57,70,0.14);
+    --chrome:#9aa3ad;
+    --line:rgba(242,243,245,0.1);
+    --font-display:"Oswald", sans-serif;
+    --font-body:"Inter", sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 1.5rem;}
+
+  .concept-ribbon{
+    background:var(--red); color:#1a0506; font-size:0.8rem; font-weight:700;
+    text-align:center; padding:0.6rem 1rem; letter-spacing:0.02em;
+  }
+  .concept-ribbon a{ text-decoration:underline; text-underline-offset:2px; }
+
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(10,11,13,0.9); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:1.25rem; letter-spacing:0.02em; text-transform:uppercase; }
+  .logo span{ color:var(--red); }
+  nav.main-nav{ display:flex; gap:2rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.03em; font-weight:600;}
+  nav.main-nav a{ opacity:0.78; transition:opacity 0.2s; }
+  nav.main-nav a:hover{ opacity:1; color:var(--red); }
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    background:var(--red); color:#1a0506; padding:0.6rem 1.2rem;
+    font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.03em;
+    text-decoration:none; clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
+  }
+  @media (max-width:760px){ nav.main-nav{display:none;} }
+
+  .hero{ position:relative; padding:5rem 0 4rem; overflow:hidden; }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:
+      linear-gradient(115deg, transparent 55%, rgba(230,57,70,0.1) 55%, rgba(230,57,70,0.1) 57%, transparent 57%),
+      radial-gradient(circle at 90% 10%, rgba(230,57,70,0.14), transparent 45%);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    color:var(--red); font-size:0.8rem; font-weight:700;
+    letter-spacing:0.16em; text-transform:uppercase; margin-bottom:1.2rem;
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background:var(--red); }
+  h1{
+    font-family:var(--font-display); text-transform:uppercase;
+    font-size:clamp(2.6rem, 6vw, 4.4rem); line-height:1; font-weight:700; letter-spacing:-0.01em;
+    max-width:16ch;
+  }
+  h1 span{ color:var(--red); }
+  .hero p.lead{ margin-top:1.4rem; max-width:42ch; color:var(--ink-muted); font-size:1.05rem; }
+  .hero-ctas{ display:flex; gap:1rem; margin-top:2.2rem; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:0.6rem;
+    padding:0.9rem 1.7rem; font-weight:700; font-size:0.88rem;
+    text-transform:uppercase; letter-spacing:0.03em; text-decoration:none; cursor:pointer;
+  }
+  .btn-primary{ background:var(--red); color:#1a0506; clip-path:polygon(4% 0,100% 0,96% 100%,0 100%); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
+
+  /* Before/After split showcase */
+  .split-showcase{
+    margin-top:3.5rem; border:1px solid var(--line); position:relative;
+    display:grid; grid-template-columns:1fr 1fr; height:280px;
+    clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+  }
+  .split-panel{ position:relative; display:flex; align-items:flex-end; padding:1.2rem; }
+  .split-panel.before{ background:linear-gradient(155deg,#2a2224,#141314); }
+  .split-panel.after{ background:linear-gradient(155deg,#151c22,#0c1013);
+    clip-path:polygon(6% 0,100% 0,100% 100%,0% 100%); margin-left:-6%; }
+  .split-panel .tag{
+    font-family:var(--font-display); text-transform:uppercase; font-weight:600;
+    font-size:0.85rem; letter-spacing:0.05em; padding:0.35rem 0.8rem;
+    background:rgba(10,11,13,0.75); backdrop-filter:blur(4px);
+  }
+  .split-panel.before .tag{ color:var(--ink-faint); }
+  .split-panel.after .tag{ color:var(--red); }
+  @media (max-width:700px){ .split-showcase{ grid-template-columns:1fr; height:auto; }
+    .split-panel{ aspect-ratio:16/9; } .split-panel.after{ margin-left:0; clip-path:none; } }
+
+  section{ padding:4.5rem 0; }
+  .section-head{ margin-bottom:2.4rem; max-width:50ch; }
+  .section-head .eyebrow{ margin-bottom:0.8rem; }
+  .section-head h2{ font-family:var(--font-display); text-transform:uppercase; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; }
+  .section-head p{ color:var(--ink-muted); margin-top:0.8rem; }
+
+  .packages{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+  .package{
+    background:var(--bg-card); border:1px solid var(--line); padding:1.8rem;
+    display:flex; flex-direction:column; gap:0.9rem;
+  }
+  .package.featured{ border-color:var(--red); position:relative; }
+  .package.featured::before{
+    content:"Mais pedido"; position:absolute; top:-0.7rem; left:1.8rem;
+    background:var(--red); color:#1a0506; font-size:0.68rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem;
+  }
+  .package h3{ font-family:var(--font-display); text-transform:uppercase; font-size:1.15rem; }
+  .package .price{ font-family:var(--font-display); font-size:1.9rem; color:var(--red); }
+  .package .price small{ font-family:var(--font-body); font-size:0.85rem; color:var(--ink-faint); font-weight:400;}
+  .package ul{ list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:0.9rem; color:var(--ink-muted); }
+  .package li::before{ content:"— "; color:var(--red); }
+  @media (max-width:820px){ .packages{ grid-template-columns:1fr; } }
+
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:0.9rem; }
+  .gallery-item{ aspect-ratio:1; border:1px solid var(--line); position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:0.8rem; }
+  .gallery-item span{ font-family:var(--font-display); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .gallery-item:nth-child(1){background:linear-gradient(150deg,#181c22,#0c0d0f);}
+  .gallery-item:nth-child(2){background:linear-gradient(150deg,#22171a,#0c0d0f);}
+  .gallery-item:nth-child(3){background:linear-gradient(150deg,#161c1f,#0c0d0f);}
+  .gallery-item:nth-child(4){background:linear-gradient(150deg,#1e1a1c,#0c0d0f);}
+  @media (max-width:700px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  footer{
+    border-top:1px solid var(--line); padding:2.6rem 0; margin-top:2rem;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+    color:var(--ink-faint); font-size:0.85rem;
+  }
+  footer a{ color:var(--red); text-decoration:none; font-weight:600; }
+</style>
+</head>
+<body>
+
+  <div class="concept-ribbon">
+    🏁 Este é um protótipo conceitual criado pela SNOOL para demonstrar como ficaria o site da Forza Detailing — não é um cliente real ainda.
+    <a href="../../index.html">Ver o site da SNOOL →</a>
+  </div>
+
+  <header>
+    <div class="wrap header-inner">
+      <div class="logo">FORZA <span>DETAILING</span></div>
+      <nav class="main-nav">
+        <a href="#pacotes">Pacotes</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#orcamento">Orçamento</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20detailing." target="_blank" rel="noopener">Pedir orçamento</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <span class="eyebrow">Estética automotiva · Joinville, SC</span>
+        <h1>Do sujo ao <span>espelhado.</span></h1>
+        <p class="lead">Higienização, polimento e vitrificação com processo fotografado do início ao fim. Você acompanha cada etapa antes de aprovar.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20detailing." target="_blank" rel="noopener">Solicitar orçamento rápido</a>
+          <a class="btn btn-ghost" href="#pacotes">Ver pacotes</a>
+        </div>
+
+        <div class="split-showcase" aria-hidden="true">
+          <div class="split-panel before"><span class="tag">Antes</span></div>
+          <div class="split-panel after"><span class="tag">Depois</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pacotes">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pacotes</span>
+          <h2>Escolha o nível de cuidado</h2>
+          <p>Valores de referência para este protótipo — cada estética ajusta conforme porte do veículo.</p>
+        </div>
+        <div class="packages">
+          <div class="package">
+            <h3>Lavagem técnica</h3>
+            <div class="price">R$ 80 <small>/ veículo</small></div>
+            <ul>
+              <li>Lavagem externa detalhada</li>
+              <li>Limpeza de rodas e caixas</li>
+              <li>Aspiração completa</li>
+            </ul>
+          </div>
+          <div class="package featured">
+            <h3>Polimento + Higienização</h3>
+            <div class="price">R$ 320 <small>/ veículo</small></div>
+            <ul>
+              <li>Tudo da lavagem técnica</li>
+              <li>Polimento de pintura</li>
+              <li>Higienização de bancos e forração</li>
+              <li>Hidratação de plásticos</li>
+            </ul>
+          </div>
+          <div class="package">
+            <h3>Vitrificação premium</h3>
+            <div class="price">R$ 650 <small>/ veículo</small></div>
+            <ul>
+              <li>Tudo do pacote anterior</li>
+              <li>Vitrificação de pintura 12 meses</li>
+              <li>Proteção de vidros e rodas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Trabalhos recentes</span>
+          <h2>Galeria</h2>
+          <p>Em um site real, aqui entram fotos reais dos veículos atendidos.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><span>Polimento</span></div>
+          <div class="gallery-item"><span>Higienização interna</span></div>
+          <div class="gallery-item"><span>Vitrificação</span></div>
+          <div class="gallery-item"><span>Lavagem técnica</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orcamento">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Fale com a gente</span>
+          <h2>Peça seu orçamento agora</h2>
+          <p>Manda o modelo do carro e o serviço desejado direto no WhatsApp — resposta rápida.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20detailing." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:1rem;">
+      <span>Protótipo conceitual — Forza Detailing não é uma cliente real da SNOOL (ainda).</span>
+      <a href="../../index.html">Feito pela SNOOL →</a>
+    </div>
+  </footer>
+
+</body>
+</html>

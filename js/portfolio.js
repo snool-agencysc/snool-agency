@@ -7,6 +7,7 @@ const PROJECTS = [
     stack: ["HTML", "CSS", "JavaScript"],
     image: "assets/images/projeto-barbearia-noir.svg",
     conceptual: true,
+    url: "projetos/barbearia-noir/index.html",
   },
   {
     name: "Forza Detailing",
@@ -16,6 +17,7 @@ const PROJECTS = [
     stack: ["HTML", "CSS", "JavaScript"],
     image: "assets/images/projeto-forza-detailing.svg",
     conceptual: true,
+    url: "projetos/forza-detailing/index.html",
   },
   {
     name: "Massa House",
@@ -25,14 +27,20 @@ const PROJECTS = [
     stack: ["HTML", "CSS", "JavaScript"],
     image: "assets/images/projeto-massa-house.svg",
     conceptual: true,
+    url: "projetos/massa-house/index.html",
   },
 ];
 
 function renderProjectCard(project, index) {
-  const article = document.createElement("article");
+  const article = document.createElement(project.url ? "a" : "article");
   article.className = "card portfolio-card";
   article.setAttribute("data-reveal", "");
   article.setAttribute("data-reveal-delay", String(index * 90));
+  if (project.url) {
+    article.href = project.url;
+    article.target = "_blank";
+    article.rel = "noopener";
+  }
 
   article.innerHTML = `
     <div class="portfolio-media">
