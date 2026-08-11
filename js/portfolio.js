@@ -29,6 +29,26 @@ const PROJECTS = [
     conceptual: true,
     url: "projetos/massa-house/index.html",
   },
+  {
+    name: "Raiz",
+    category: "Site institucional",
+    description:
+      "Site para restaurante farm-to-table, com cardápio por categorias, depoimentos e reserva de mesa.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "assets/images/projeto-raiz.svg",
+    conceptual: true,
+    url: "projetos/raiz/index.html",
+  },
+  {
+    name: "Alma Estética Avançada",
+    category: "Landing Page",
+    description:
+      "Landing page para clínica de estética avançada, com especialidades por categoria e agendamento via WhatsApp.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "assets/images/projeto-alma-estetica.svg",
+    conceptual: true,
+    url: "projetos/alma-estetica/index.html",
+  },
 ];
 
 function renderProjectCard(project, index) {
