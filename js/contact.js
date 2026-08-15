@@ -1,5 +1,5 @@
 // Edite este número para o WhatsApp oficial da SNOOL (formato: 55 + DDD + número)
-const WHATSAPP_NUMBER = "55XXXXXXXXXXX";
+const WHATSAPP_NUMBER = "5547984733407";
 
 const DEFAULT_MESSAGE =
   "Olá, SNOOL! Vi o site de vocês e gostaria de saber mais sobre uma solução digital para o meu negócio.";
